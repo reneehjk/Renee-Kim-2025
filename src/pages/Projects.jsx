@@ -1,16 +1,17 @@
 import ks from "../assets/kimchiS.png"
 import pt from "../assets/plotd.png"
 import qu from "../assets/qux.png"
-import flower from "../assets/medFlower.svg";
+import sf from "../assets/smallFlower.svg";
+import mf from "../assets/medFlower.svg";
+import lf from "../assets/largeFlower.svg";
 
 
 export default function Projects() {
   return (
     <div className="container">
-      <p style={{ marginBottom: "30px" }}>Projects</p>
-        <h1 style={{ marginBottom: "80px" }}>
-            Featured Work
-        </h1>
+        <p className="projects-kicker">Projects</p>
+        <h1 className="projects-title">Featured Work</h1>
+
 
         <section className="projects-grid">
             {/* wrapper: 3:2 layout INSIDE */}
@@ -18,7 +19,7 @@ export default function Projects() {
                 {/* Right (2 parts) — QUX (different layout) */}
                 <article className="project-card--inner project-card--qux">
                 <div className="project-media">
-                    <img src={flower} alt="" className="project-flower" />
+                    <img src={sf} alt="" className="project-flower" />
                     <img src={qu} alt="" />
                 </div>
 
@@ -37,13 +38,13 @@ export default function Projects() {
                     </div>
 
                     <div className="project-media">
-                        <img src={flower} alt="" className="project-flower" />
+                        <img src={lf} alt="" className="project-flower" />
                         <img src={pt} alt="Plotd app mockup" />
                     </div>
                 </article>
                 <article className="project-card project-card--wide">
                     <div className="project-media">
-                        <img src={flower} alt="" className="project-flower" />
+                        <img src={mf} alt="" className="project-flower" />
                         <img src={ks} alt="" />
                     </div>
                     <div className="project-meta">

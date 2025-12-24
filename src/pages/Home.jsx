@@ -93,7 +93,7 @@ export default function Home() {
 
       {/* Your existing content */}
       <div className="container hero-content">
-        <p style={{ marginBottom: "30px" }}>Renee Kim · Canada</p>
+        <p className="hero-kicker">Renee Kim · Canada</p>
 
         <h1>
           <span style={{ display: "block", color: "#372A2A" }}>
@@ -106,12 +106,11 @@ export default function Home() {
             Smooth developer handoff.
           </span>
         </h1>
-
         <Link to="/projects" style={{ textDecoration: "none" }}>
-          <button className="cta-button" style={{ marginTop: "90px" }}>
-            <span>Projects</span>
-            <img src={diagonalArrow} alt="" className="arrow" />
-          </button>
+            <button className="cta-button hero-cta">
+                <span>Projects</span>
+                <img src={diagonalArrow} alt="" className="arrow" />
+            </button>
         </Link>
       </div>
       

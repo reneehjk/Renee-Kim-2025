@@ -1,11 +1,6 @@
-import { Outlet } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import { useFadeOnRouteChange } from "./hooks/useFadeOnRouteChange";
 
-export default function Layout() {
-  return (
-    <>
-      <NavBar />
-      <Outlet />
-    </>
-  );
+export default function AppLayout({ children }) {
+  useFadeOnRouteChange();
+  return children;
 }

@@ -1,0 +1,680 @@
+/* =========================
+   Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Base
+========================= */
+html,
+body {
+  font-family: "Urbanist", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #F2F0EF;
+  color: #372A2A;
+}
+
+
+/* =========================
+   Layout Utilities
+========================= */
+.container {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  padding-inline: 15vh;
+}
+
+
+/* =========================
+   Typography
+========================= */
+h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #6D6565;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+p strong {
+  font-weight: 500;
+  color: #372A2A;
+}
+
+
+/* =========================
+   Keyframes
+========================= */
+@keyframes spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* =========================
+   Buttons
+========================= */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: #372A2A;
+  color: #F2F0EF;
+  font-family: "Urbanist", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.cta-button .arrow {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.cta-button:hover {
+  background-color: #6D6565;
+}
+
+.cta-button:hover .arrow {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* =========================
+   Navigation
+========================= */
+.nav {
+  width: 100%;
+  padding-top: 5vh;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #372A2A;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.nav-link.active {
+  font-weight: 500;
+}
+
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #D0C7C2;
+
+  padding: 40px 15vh 60px;
+
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+
+
+/* =========================
+   Home
+========================= */
+.hero {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* flowers */
+.hero--flowers {
+  position: relative;
+  overflow: hidden; /* keeps page from scrolling even if flowers go off-screen */
+}
+
+.hero-flowers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /* allow hover on flowers */
+  pointer-events: auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keyframes */
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+/* Base flower */
+.flower {
+  position: absolute;
+  display: block;
+  user-select: none;
+  transform-origin: center center;
+  will-change: transform;
+  cursor: default;
+
+  /* subtle hover polish */
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.flower:hover {
+  filter: saturate(1.06);
+}
+
+/* Positioning (outside container, off page edges) */
+.flower--large {
+  width: 560px;
+  height: auto;
+  right: -100px;
+  top: 0px;
+}
+
+.flower--med {
+  width: 360px;
+  height: auto;
+  right: 300px;
+  bottom: -120px;
+  opacity: 0.95;
+}
+
+.flower--small {
+  width: 160px;
+  height: auto;
+  right: 20px;
+  bottom: -10px;
+  opacity: 0.95;
+}
+
+/* Rotation speeds */
+.spin-cw {
+  animation: spin-cw 60s linear infinite;
+}
+
+.spin-ccw {
+  animation: spin-ccw 45s linear infinite;
+}
+
+/*
+Smooth stop/resume trick:
+- "is-pausing" overrides transform to the current angle AND transitions into it
+- "is-paused" actually pauses the animation (but only after we eased into the freeze)
+*/
+.flower.is-pausing {
+  /* freeze angle set by JS: --freeze-angle */
+  transform: rotate(var(--freeze-angle, 0deg));
+  transition: transform 260ms ease-out, filter 200ms ease;
+}
+
+.flower.is-paused {
+  animation-play-state: paused;
+}
+
+
+/* =========================
+   Projects
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.project-card {
+  background: #F2F0EF;
+  border: 1px solid #D0C7C2;
+  border-radius: 36px;
+  padding: 38px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.project-card--wide {
+  grid-column: 1 / -1;
+  padding: 76px; 
+}
+
+.project-card--wide .project-meta {
+  position: relative;
+  z-index: 2;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.project-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-media img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.project-title {
+  font-size: 46px;
+  line-height: 1.05;
+  font-weight: 400;
+  color: #372A2A;
+}
+
+.project-subtitle {
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+.project-tags {
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  color: #372A2A;
+  opacity: 0.85;
+}
+
+.project-card--row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  gap: 28px;
+  padding: 0;
+  background: transparent;
+}
+
+.project-card--inner {
+  background: #F2F0EF;
+  border: 1px solid #D0C7C2;
+  border-radius: 36px;
+  padding: 38px;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.project-card--inner img {
+  max-width: 400px;
+}
+
+.project-card--plotd {
+  position: relative;
+  display: block;
+  padding: 60px;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.project-card--plotd .project-meta {
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.project-card--plotd .project-media {
+  position: absolute;
+  right: 50px;
+  bottom: -90px;
+  z-index: 1;
+}
+
+.project-card--plotd .project-media img {
+  height: 520px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.project-card--qux {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  justify-content: space-between;
+}
+
+/* Image hover zoom */
+
+.project-card img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.project-card img,
+.project-card--inner img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.project-card:hover img,
+.project-card--inner:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+/* Flower behind project images */
+.project-media {
+  position: relative;  /* lets us absolutely-position the flower */
+  z-index: 1;
+}
+
+.project-media .project-flower {
+  position: absolute;
+  z-index: 0;          /* behind the main image */
+  pointer-events: none;
+  opacity: 0.9;
+
+  width: 260px;        /* tweak per card if you want */
+  height: auto;
+
+  /* default “peek” position */
+  right: -40px;
+  top: -30px;
+}
+
+/* keep the real screenshot above the flower */
+.project-media > img:not(.project-flower) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional per-card tweaks */
+.project-card--plotd .project-flower {
+  width: 200px;
+  right: -150px;
+  top: 100px;
+}
+
+.project-card--inner.project-card--qux .project-flower {
+  width: 300px;
+  right: -70px;
+  top: -70px;
+}
+
+.project-card--wide .project-flower {
+  width: 600px;
+  left: -100px;
+  top: 0px;
+}
+
+
+/* =========================
+   About Page
+========================= */
+
+
+/* Intro */
+.about-intro {
+  margin-bottom: 120px;
+}
+
+.about-kicker {
+  margin-bottom: 24px;
+}
+
+.about-title span {
+  display: block;
+}
+
+.about-title--muted {
+  color: #6D6565;
+}
+
+.about-subhead {
+  margin-top: 40px;
+  max-width: 760px;
+}
+
+/* Story */
+.about-story {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-section-label {
+  margin-bottom: 10px;
+}
+
+.about-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.about-row--images {
+  grid-template-columns: 1fr 1fr;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-image {
+  border-radius: 16px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about-image.large {
+  max-width: 280px;
+}
+
+.about-image.medium {
+  max-width: 240px;
+}
+
+.about-image-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.about-image-grid img {
+  width: 160px;
+  border-radius: 16px;
+}
+
+/* Skills */
+.about-skills {
+  margin-top: 160px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.skills-list h3 {
+  margin-bottom: 6px;
+}
+
+/* Story section layout */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr; /* left label + main content */
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left column */
+.about-story-label {
+  font-size: 14px;
+  color: #372A2A;
+}
+
+/* Right column */
+.about-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Existing row layout stays the same */
+.about-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* =========================
+   Contact
+========================= */
+.contact-inner {
+  min-height: 95vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-left {
+  width: min(760px, 100%);
+
+}
+
+.contact-kicker {
+  margin-bottom: 30px;
+}
+
+.contact-title {
+  margin-bottom: 200px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 90px;
+  row-gap: 60px;
+}
+
+.contact-label {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6D6565;
+  margin-bottom: 14px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #372A2A;
+  font-weight: 300;
+  font-size: 18px;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #6D6565;
+}
+
+.arrow--sm {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+
+/* same rotate behavior as your CTA button */
+.contact-link:hover .arrow--sm {
+  transform: rotate(45deg);
+}
+
+.contact-value {
+  color: #372A2A;
+  font-weight: 300;
+}
+
+

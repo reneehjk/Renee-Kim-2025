@@ -172,7 +172,7 @@ p strong {
    Home
 ========================= */
 .hero {
-  min-height: 95vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
 }
@@ -234,7 +234,7 @@ p strong {
 
 /* Positioning (outside container, off page edges) */
 .flower--large {
-  width: 560px;
+  width: 500px;
   height: auto;
   right: -100px;
   top: 0px;
@@ -244,7 +244,7 @@ p strong {
   width: 360px;
   height: auto;
   right: 300px;
-  bottom: -120px;
+  bottom: -180px;
   opacity: 0.95;
 }
 
@@ -252,7 +252,7 @@ p strong {
   width: 160px;
   height: auto;
   right: 20px;
-  bottom: -10px;
+  bottom: -60px;
   opacity: 0.95;
 }
 
@@ -617,7 +617,7 @@ Smooth stop/resume trick:
 }
 
 .contact-inner {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: flex-start;
 }

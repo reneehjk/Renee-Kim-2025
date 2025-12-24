@@ -611,15 +611,19 @@ Smooth stop/resume trick:
 /* =========================
    Contact
 ========================= */
+.contact {
+  position: relative;
+  overflow: hidden; /* prevents scroll from off-screen flowers */
+}
+
 .contact-inner {
-  min-height: 95vh;
+  min-height: 90vh;
   display: flex;
   align-items: flex-start;
 }
 
 .contact-left {
   width: min(760px, 100%);
-
 }
 
 .contact-kicker {
@@ -635,6 +639,7 @@ Smooth stop/resume trick:
   grid-template-columns: 1fr 1fr;
   column-gap: 90px;
   row-gap: 60px;
+  align-items: start;
 }
 
 .contact-label {
@@ -645,31 +650,26 @@ Smooth stop/resume trick:
 }
 
 .contact-link {
+  font-size: 18px;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   text-decoration: none;
   color: #372A2A;
   font-weight: 300;
-  font-size: 18px;
-  transition: color 0.25s ease, transform 0.2s ease;
 }
 
 .contact-link:hover {
   color: #6D6565;
 }
 
-.arrow--sm {
+.contact-arrow {
   width: 14px;
   height: 14px;
   display: block;
+  transform: translateY(1px);
   transition: transform 0.25s ease;
   transform-origin: center;
-}
-
-/* same rotate behavior as your CTA button */
-.contact-link:hover .arrow--sm {
-  transform: rotate(45deg);
 }
 
 .contact-value {
@@ -677,4 +677,43 @@ Smooth stop/resume trick:
   font-weight: 300;
 }
 
+/* same rotate behavior as your CTA button */
+.contact-link:hover .contact-arrow {
+  transform: rotate(45deg);
+  opacity: 65%;
+}
+
+/* Flowers on right side */
+.contact-flowers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.contact-flower {
+  position: absolute;
+  display: block;
+  user-select: none;
+}
+
+.contact-flower--small {
+  width: 120px;
+  right: 260px;
+  top: 100px;
+  opacity: 0.9;
+}
+
+.contact-flower--med {
+  width: 280px;
+  right: -120px;
+  top: 40px;
+  opacity: 0.9;
+}
+
+.contact-flower--large {
+  width: 520px;
+  right: 0px;
+  bottom: -120px;
+  opacity: 0.95;
+}
 

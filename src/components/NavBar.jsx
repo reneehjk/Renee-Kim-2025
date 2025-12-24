@@ -11,7 +11,7 @@ export default function NavBar() {
         <NavLink to="/about" className={linkClass}>About</NavLink>
         <NavLink to="/contact" className={linkClass}>Contact</NavLink>
 
-        <a className="nav-link" href="/resume.pdf" target="_blank" rel="noreferrer">
+        <a className="nav-link" href="https://drive.google.com/file/d/1Bf7mEL7FkjMcq-2DmaNk3umj_lr2zXm4/view?usp=sharing" target="_blank" rel="noreferrer">
           Resume
         </a>
       </div>

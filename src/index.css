@@ -475,13 +475,13 @@ p strong {
 }
 
 /* =========================
-   Phone
+   mobile
 ========================= */
 @media (max-width: 640px) {
   .hero {
     align-items: flex-start;
     min-height: 90vh;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .container {

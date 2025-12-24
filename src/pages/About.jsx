@@ -6,7 +6,6 @@ import fourth from "../assets/4.png";
 export default function About() {
   return (
     <div className="container about-page">
-
       {/* Intro */}
       <section className="about-intro">
         <p className="about-kicker">About Me</p>

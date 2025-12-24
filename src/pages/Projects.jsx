@@ -8,7 +8,7 @@ import lf from "../assets/largeFlower.svg";
 
 export default function Projects() {
   return (
-    <div className="container">
+    <div className="container project-page">
         <p className="projects-kicker">Projects</p>
         <h1 className="projects-title">Featured Work</h1>
 

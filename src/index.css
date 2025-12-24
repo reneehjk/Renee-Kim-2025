@@ -481,7 +481,6 @@ p strong {
   .hero {
     align-items: flex-start;
     min-height: 90vh;
-    margin-top: 20px;
   }
 
   .container {

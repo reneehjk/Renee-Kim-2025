@@ -35,7 +35,7 @@
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 60px;
-  padding-inline: 100px;
+  padding-inline: 200px;
 }
 
 .kimchi-subtitle {
@@ -91,7 +91,6 @@
    Coming Soon
 ========================= */
 
-/* Your Kimchi JSX uses: <p className="kimchi-coming-soon">... */
 .kimchi-coming-soon {
   margin-top: 50px;
   margin-bottom: 0;

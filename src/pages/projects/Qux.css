@@ -20,7 +20,7 @@
 
 .qux-hero-image {
   height: auto;
-  width: min(600px, 100%);
+  width: min(500px, 100%);
   display: block;
   border-radius: 18px;
 }
@@ -35,7 +35,7 @@
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 60px;
-  padding-inline: 100px;
+  padding-inline: 200px;
 }
 
 .qux-title-group h1 {

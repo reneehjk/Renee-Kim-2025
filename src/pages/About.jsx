@@ -1,7 +1,30 @@
-import first from "../assets/1.png";
 import second from "../assets/2.png";
-import third from "../assets/3.png";
 import fourth from "../assets/4.png";
+import fifth from "../assets/skating.jpg";
+import sixth from "../assets/conference.jpeg";
+import seven from "../assets/7.jpg";
+import eight from "../assets/8.png";
+
+import { useState } from "react";
+
+function PhotoCard({ src, alt, caption }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <figure
+      className={`about-photo-card about-photo-card--inline about-photo-hover ${
+        open ? "is-open" : ""
+      }`}
+      tabIndex={0}
+      onClick={() => setOpen(!open)}
+      onBlur={() => setOpen(false)}
+    >
+      <img src={src} alt={alt} loading="lazy" />
+      <figcaption className="about-photo-tooltip">{caption}</figcaption>
+    </figure>
+  );
+}
+
 
 export default function About() {
   return (
@@ -33,58 +56,107 @@ export default function About() {
           {/* RIGHT COLUMN — content */}
           <div className="about-story-content">
             <p><strong>I’ve always loved creating things for people.</strong></p>
+
             <p>
               When I was younger, I would choreograph dances and teach them to my little sister. In hindsight, they were terrible dances, but I loved watching how she reacted, what she found fun, and what didn’t work. Without realizing it, I was already testing, iterating, and designing experiences.
             </p>
-            {/* Row 1 */}
+
+            
+            <div className="about-inline-photos" aria-label="Photos in story">
+              <PhotoCard
+                src={eight}
+                alt="Plotd team"
+                caption="The super cool Plotd team!!"
+              />
+
+              <PhotoCard
+                src={sixth}
+                alt="Conference moment"
+                caption="Conference + community moments"
+              />
+
+              <PhotoCard
+                src={second}
+                alt="Working session"
+                caption="QWIC ♡ QUX"
+              />
+            </div>
+
+
             <p>
-              As I grew, this instinct showed up in different forms, leading group projects, organizing student events, helping younger students adjust to school. I found myself in positions where I was trying to understand what people needed and building something to support them. When I started at Queen’s for Computer Science, I expected to write code, build systems, and think logically, which I did end up doing. But something clicked when I joined clubs like QMIND, Queen’s Web Dev, GameDev, and RISE Lab. I was coding web apps as well as designing interfaces. This meant I understood and experienced the constraints developers face and understood the importance of clarity in design. Then, I took a Human–Computer Interaction course, and everything came together. UX research, interaction design, prototyping, it felt like the perfect bridge between the creativity I grew up with and the technical foundation I built in CS.            
+              As I grew, this instinct showed up in many ways, from leading projects and organizing events to supporting others through transitions. When I started Computer Science at Queen’s, I expected to focus mostly on coding, and I did. But things really clicked when I joined clubs like QMIND, Queen’s Web Dev, GameDev, and RISE Lab. Designing interfaces alongside building web apps helped me better understand user needs as well as the constraints developers work within. A Human–Computer Interaction course tied everything together, connecting creativity with technical problem-solving. 
             </p>
+
             <p><strong>Since then, I’ve stepped fully into product design.</strong></p>
-            {/* Row 2 */}
+
             <p>
-              In my final year, I co-founded Queen’s UX because students like me needed a space to learn design properly, not just pretty screens, but real user-centered thinking. As Vice-Chair of Marketing for Queen’s Women in Computing, I brought that same mindset to every campaign, workshop, and community event. I approached club members the way I approach users: talk to them, understand the gaps, and design better experiences for them. Now, I design with both sides of the product in mind. My CS background helps me think structurally as well as communicate with the engineering side. My design training helps me craft interfaces that feel intuitive, thoughtful, and human. And my leadership experience keeps me grounded in empathy, always designing with people, not just for them.
+              In my final year, I co-founded Queen’s UX to create the kind of design-focused space I had been looking for, one centered on thoughtful, user-driven work. As Vice-Chair of Marketing for Queen’s Women in Computing, I brought that same mindset to campaigns and events. Today, I design with both structure and empathy, creating experiences that are intuitive, collaborative, and human.
             </p>
+            <div className="about-inline-photos" aria-label="Photos in story">
+              <PhotoCard
+                src={fourth}
+                alt="Pokémon"
+                caption="Pokémon card show!!"
+              />
+
+              <PhotoCard
+                src={seven}
+                alt="Dance"
+                caption="CCDC dance team photoshoot"
+              />
+
+              <PhotoCard
+                src={fifth}
+                alt="Figure skating"
+                caption="Figure skating = my reset"
+              />
+            </div>
+
+
             <p>
               Outside of tech, I stay inspired through dance, figure skating, anime, and Pokémon. These communities remind me why I love design in the first place: storytelling, connection, and creating moments that make people feel something.
             </p>
+
           </div>
+          
         </div>
+        
       </section>
 
+      
 
       {/* Skills */}
-      <section className="about-story-grid" style = {{marginTop: "90px"}}>
+      <section className="about-story-grid" style={{ marginTop: "90px" }}>
         <p className="about-section-label"><strong>My skills</strong></p>
 
         <div className="skills-list">
           <div>
-            <h3 style = {{ color:"#372A2A" }}>UX Research & Analysis</h3>
+            <h3 style={{ color:"#372A2A" }}>UX Research & Analysis</h3>
             <p>User Surveys/Interviews | Competitor Analysis | Personas | Journey Mapping</p>
           </div>
 
           <div>
-            <h3 style = {{ color:"#372A2A" }}>UX Design</h3>
+            <h3 style={{ color:"#372A2A" }}>UX Design</h3>
             <p>User Flows | Information Architecture | Wireframing & Prototyping | Usability Testing</p>
           </div>
 
           <div>
-            <h3 style = {{ color:"#372A2A" }}>UI Design</h3>
+            <h3 style={{ color:"#372A2A" }}>UI Design</h3>
             <p>Visual Design | Colour Theory | Typography | Accessibility | Figma</p>
           </div>
 
           <div>
-            <h3 style = {{ color:"#372A2A" }}>Coding</h3>
+            <h3 style={{ color:"#372A2A" }}>Coding</h3>
             <p>HTML | CSS & Tailwind CSS | Javascript | Typescript | Python | C | Java | React | Next.js | R | Bash</p>
           </div>
 
           <div>
-            <h3 style = {{ color:"#372A2A" }}>Project Management</h3>
+            <h3 style={{ color:"#372A2A" }}>Project Management</h3>
             <p>Project Planning | People Management/Organization | Facilitating Meetings | Client Communication </p>
           </div>
 
           <div>
-            <h3 style = {{ color:"#372A2A" }}>Miscellaneous</h3>
+            <h3 style={{ color:"#372A2A" }}>Miscellaneous</h3>
             <p>CapCut | SEO | Google Suite | Event Planning</p>
           </div>
         </div>

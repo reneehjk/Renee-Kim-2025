@@ -11,6 +11,10 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import AppLayout from "./Layout";
 
+import Plotd from "./pages/projects/Plotd.jsx";
+import Kimchi from "./pages/projects/Kimchi.jsx";
+import Qux from "./pages/projects/Qux.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
@@ -20,6 +24,9 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/plotd" element={<Plotd />} />
+            <Route path="/projects/kimchi-studios" element={<Kimchi />} />
+            <Route path="/projects/qux" element={<Qux />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

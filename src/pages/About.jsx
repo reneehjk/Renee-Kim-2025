@@ -1,9 +1,9 @@
 import second from "../assets/2.png";
 import fourth from "../assets/4.png";
-import fifth from "../assets/skating.jpg";
-import sixth from "../assets/conference.jpeg";
-import seven from "../assets/7.jpg";
-import eight from "../assets/8.png";
+import fifth from "../assets/5.JPG";
+import sixth from "../assets/6.JPEG";
+import seven from "../assets/7.JPG";
+import eight from "../assets/8.PNG";
 
 import { useState } from "react";
 

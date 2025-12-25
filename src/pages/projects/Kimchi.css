@@ -1,0 +1,244 @@
+/* Kimchi.css */
+/* =========================
+   Kimchi Case Study Page
+========================= */
+
+.kimchi-page {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.kimchi-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.kimchi-hero-image {
+  height: auto;
+  width: min(600px, 100%);
+  display: block;
+  border-radius: 18px;
+}
+
+/* =========================
+   Header (initial block — will get overridden below just like Qux.css)
+========================= */
+
+.kimchi-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 60px;
+  padding-inline: 100px;
+}
+
+.kimchi-subtitle {
+  margin-top: 14px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+.kimchi-year {
+  font-size: 24px;
+  font-weight: 300;
+  color: #6D6565;
+  white-space: nowrap;
+}
+
+/* =========================
+   Header (second block — this is what actually applies at desktop in your Qux.css)
+========================= */
+
+.title {
+  display: flex;
+  align-self: start;
+}
+
+.kimchi-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Subtitle + year row */
+.kimchi-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.kimchi-subtitle {
+  margin: 0;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+.kimchi-year {
+  font-weight: 300;
+  color: #6D6565;
+  white-space: nowrap;
+}
+
+/* =========================
+   Coming Soon
+========================= */
+
+/* Your Kimchi JSX uses: <p className="kimchi-coming-soon">... */
+.kimchi-coming-soon {
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 300;
+  color: #6D6565;
+}
+
+/* =========================
+   Overview + Impact
+========================= */
+
+.kimchi-overview {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+.kimchi-section-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 18px 0;
+  color: #372A2A;
+}
+
+.kimchi-body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: #6D6565;
+  max-width: 58ch;
+}
+
+/* Impact card */
+.kimchi-impact-card {
+  background: #7fa0cf; /* same placeholder as your Qux.css */
+  border-radius: 28px;
+  padding: 34px 34px;
+  color: #ffffff;
+}
+
+.kimchi-impact-title {
+  margin: 0 0 18px 0;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.kimchi-impact-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.kimchi-impact-list li {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Slightly softer bullets */
+.kimchi-impact-list li::marker {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================
+   Responsive (kept same as Qux.css — including the “override back to row” behavior)
+========================= */
+
+@media (max-width: 820px) {
+  .kimchi-hero {
+    margin-bottom: 56px;
+  }
+
+  .kimchi-hero-image {
+    height: auto;
+    width: min(400px, 100%);
+    display: block;
+    border-radius: 18px;
+    }
+
+  .kimchi-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .kimchi-year {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  .kimchi-subtitle {
+    font-size: 16px;
+  }
+
+  .kimchi-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 60px;
+    padding-inline: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kimchi-hero {
+    margin-bottom: 44px;
+  }
+
+  .kimchi-hero-image {
+    border-radius: 14px;
+  }
+
+  .kimchi-subtitle {
+    margin-top: 10px;
+  }
+
+  .kimchi-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 60px;
+    padding-inline: 0px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .kimchi-overview {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .kimchi-body {
+    max-width: none;
+  }
+
+    .kimchi-hero-image {
+    height: auto;
+    width: min(400px, 100%);
+    display: block;
+    border-radius: 18px;
+    }
+  
+}

@@ -1,243 +1,344 @@
-/* Kimchi.css */
 /* =========================
-   Kimchi Case Study Page
+   Kimchi Case Study
+   (Matches Plotd format)
 ========================= */
 
 .kimchi-page {
-  padding-top: 10vh;
+  padding-top: 6vh;
   padding-bottom: 10vh;
 }
 
-/* =========================
-   Hero
-========================= */
-
-.kimchi-hero {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
+.kimchi-top,
+.kimchi-section {
+  scroll-margin-top: 50px;
 }
 
-.kimchi-hero-image {
-  height: auto;
-  width: min(600px, 100%);
-  display: block;
-  border-radius: 18px;
-}
-
-/* =========================
-   Header (initial block — will get overridden below just like Qux.css)
-========================= */
-
-.kimchi-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 60px;
-  padding-inline: 200px;
-}
-
-.kimchi-subtitle {
-  margin-top: 14px;
-  font-size: 24px;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-.kimchi-year {
-  font-size: 24px;
-  font-weight: 300;
-  color: #6D6565;
-  white-space: nowrap;
-}
-
-/* =========================
-   Header (second block — this is what actually applies at desktop in your Qux.css)
-========================= */
-
-.title {
-  display: flex;
-  align-self: start;
-}
-
-.kimchi-header {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* Subtitle + year row */
-.kimchi-meta-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.kimchi-max {
+  max-width: 1080px;
   width: 100%;
 }
 
-.kimchi-subtitle {
-  margin: 0;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-.kimchi-year {
-  font-weight: 300;
-  color: #6D6565;
-  white-space: nowrap;
-}
-
-/* =========================
-   Coming Soon
-========================= */
-
-.kimchi-coming-soon {
-  margin-top: 50px;
-  margin-bottom: 0;
-  font-size: 20px;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-/* =========================
-   Overview + Impact
-========================= */
-
-.kimchi-overview {
+/* Sidebar + main content layout */
+.kimchi-shell {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 160px 1fr;
+  gap: 72px;
   align-items: start;
-  margin-top: 34px;
+  width: 100%;
 }
 
-.kimchi-section-title {
-  font-size: 24px;
+/* Ensure every major block fills the content column */
+.kimchi-main,
+.kimchi-top,
+.kimchi-section,
+.kimchi-heroCard,
+.kimchi-meta {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* =========================
+   Left Sidebar Navigation
+========================= */
+
+.kimchi-side {
+  position: sticky;
+  top: 110px;
+  height: fit-content;
+  width: 160px;
+}
+
+.kimchi-back {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.kimchi-side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.kimchi-side-nav a {
+  text-decoration: none;
+  color: #6D6565;
+  font-size: 14px;
+  opacity: 0.65;
   font-weight: 400;
-  margin: 0 0 18px 0;
+}
+
+.kimchi-side-nav a:hover {
+  opacity: 1;
+}
+
+.kimchi-side-nav a.is-active {
+  color: #372A2A;
+  font-weight: 600;
+}
+
+/* Make summary text match hero/meta width */
+.kimchi-section .kimchi-body {
+  max-width: 100%;
+}
+
+/* =========================
+   Overview Section
+========================= */
+
+.kimchi-top {
+  padding-top: 8px;
+}
+
+.kimchi-kicker {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  color: #6D6565;
+}
+
+.kimchi-h1 {
+  font-size: 46px;
+  line-height: 1.12;
+  font-weight: 400;
+  margin-bottom: 26px;
+  max-width: 760px;
+  color: #372A2A;
+}
+
+/* Hero card — same treatment as Plotd */
+.kimchi-heroCard {
+  background: #cfe0fb;
+  border-radius: 18px;
+  padding: 34px 26px;
+  margin-bottom: 28px;
+}
+
+/* Make hero image behave like Plotd hero phones height */
+.kimchi-heroMedia {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.kimchi-heroImage {
+  height: 410px;    /* matches Plotd phone image height */
+  width: auto;
+  max-width: 100%;
+  display: block;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+/* Meta information row (same as Plotd) */
+.kimchi-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  margin-top: 18px;
+  margin-bottom: 40px;
+}
+
+.kimchi-metaLabel {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  margin-bottom: 6px;
+  color: #6D6565;
+}
+
+.kimchi-metaValue {
+  font-size: 18px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+  color: #6D6565;
+}
+
+/* =========================
+   Shared Section Typography
+========================= */
+
+.kimchi-section {
+  margin-top: 70px;
+}
+
+.kimchi-miniKicker {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  opacity: 0.65;
+  margin-bottom: 12px;
+  color: #6D6565;
+}
+
+.kimchi-h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 14px;
   color: #372A2A;
 }
 
 .kimchi-body {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.85;
+  max-width: 760px;
   color: #6D6565;
-  max-width: 58ch;
 }
 
-/* Impact card */
-.kimchi-impact-card {
-  background: #7fa0cf; /* same placeholder as your Qux.css */
-  border-radius: 28px;
-  padding: 34px 34px;
-  color: #ffffff;
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 30px;
+  border-radius: 15px;
+  background-color: #372A2A;
+  color: #F2F0EF;
+  font-family: "Urbanist", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
-.kimchi-impact-title {
-  margin: 0 0 18px 0;
-  font-size: 24px;
-  font-weight: 400;
-  color: #ffffff;
+.cta-button .arrow {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transition: transform 0.25s ease;
 }
 
-.kimchi-impact-list {
-  margin: 0;
-  padding-left: 18px;
-  display: grid;
-  gap: 10px;
+.cta-button:hover {
+  background-color: #6D6565;
 }
 
-.kimchi-impact-list li {
-  font-size: 16px;
-  font-weight: 300;
+.cta-button:hover .arrow {
+  transform: rotate(45deg);
+  transform-origin: center;
 }
 
-/* Slightly softer bullets */
-.kimchi-impact-list li::marker {
-  color: rgba(255, 255, 255, 0.75);
+
+/* =========================
+   Tablet (<= 1060px)
+========================= */
+
+@media (max-width: 1060px) {
+  .kimchi-shell {
+    grid-template-columns: 140px 1fr;
+    gap: 44px;
+  }
+
+  .kimchi-side {
+    width: 140px;
+    top: 96px;
+  }
+
+  .kimchi-section {
+    margin-top: 56px;
+  }
+
+  .kimchi-heroImage {
+    height: 300px; /* matches Plotd tablet phone height */
+  }
+
+  .kimchi-meta {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
 }
 
 /* =========================
-   Responsive (kept same as Qux.css — including the “override back to row” behavior)
+   Phone (<= 640px)
 ========================= */
 
-@media (max-width: 820px) {
-  .kimchi-hero {
-    margin-bottom: 56px;
+@media (max-width: 640px) {
+  .kimchi-page {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
-  .kimchi-hero-image {
-    height: auto;
-    width: min(400px, 100%);
-    display: block;
-    border-radius: 18px;
-    }
-
-  .kimchi-header {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+  .kimchi-max {
+    margin-inline: auto;
+    max-width: 100%;
   }
 
-  .kimchi-year {
-    margin-top: 8px;
-    font-size: 16px;
+  .kimchi-side {
+    display: none;
   }
 
-  .kimchi-subtitle {
-    font-size: 16px;
-  }
-
-  .kimchi-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 60px;
-    padding-inline: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .kimchi-hero {
-    margin-bottom: 44px;
-  }
-
-  .kimchi-hero-image {
-    border-radius: 14px;
-  }
-
-  .kimchi-subtitle {
-    margin-top: 10px;
-  }
-
-  .kimchi-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 60px;
-    padding-inline: 0px;
-  }
-}
-
-@media (max-width: 1300px) {
-  .kimchi-overview {
+  .kimchi-shell {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .kimchi-main,
+  .kimchi-top,
+  .kimchi-section,
+  .kimchi-heroCard,
+  .kimchi-meta {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .kimchi-heroCard {
+    padding: 26px 18px;
+  }
+
+  .kimchi-heroMedia {
+    display: grid;
+    place-items: center;
+  }
+
+  .kimchi-heroImage {
+    height: 180px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .kimchi-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* Mobile type scale (same pattern you used in Plotd) */
+  .kimchi-h1 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .kimchi-h2 {
+    font-size: 28px;
+    line-height: 1.15;
   }
 
   .kimchi-body {
-    max-width: none;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
-    .kimchi-hero-image {
+  .kimchi-kicker,
+  .kimchi-miniKicker,
+  .kimchi-metaLabel {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .kimchi-metaValue {
+    font-size: 14px;
+  }
+
+  .kimchi-page img {
+    max-width: 100%;
     height: auto;
-    width: min(400px, 100%);
     display: block;
-    border-radius: 18px;
-    }
-  
+  }
 }

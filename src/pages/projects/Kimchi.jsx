@@ -1,55 +1,142 @@
 import heroImg from "../../assets/kimchiS.png";
 import "./Kimchi.css";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import diagonalArrow from "../../assets/diagonal-arrow.svg";
 
 export default function Kimchi() {
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("overview");
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+    setActiveSection(id);
+  };
+
+  useEffect(() => {
+    const ids = ["overview", "summary"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) setActiveSection(visible.target.id);
+      },
+      { threshold: [0.2, 0.35, 0.5, 0.65], rootMargin: "-35% 0px -55% 0px" }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="container kimchi-page">
-      {/* Hero */}
-      <section className="kimchi-hero">
-        <img
-          src={heroImg}
-          alt="Kimchi Studios branding preview"
-          className="kimchi-hero-image"
-        />
-      </section>
+      <div className="kimchi-max">
+        <div className="kimchi-shell">
+          {/* Left Sidebar */}
+          <aside className="kimchi-side">
+            <button className="kimchi-back" type="button" onClick={() => navigate("/projects")}>
+              ← BACK
+            </button>
 
-      {/* Header */}
-      <section className="kimchi-header">
-        <h1 className="title">Kimchi Studios</h1>
+            <nav className="kimchi-side-nav" aria-label="Case study sections">
+              <a
+                href="#overview"
+                onClick={(e) => handleNavClick(e, "overview")}
+                className={activeSection === "overview" ? "is-active" : ""}
+              >
+                Overview
+              </a>
 
-        <div className="kimchi-meta-row">
-          <p className="kimchi-subtitle">Nail Studio Branding</p>
-          <span className="kimchi-year">2025</span>
+              <a
+                href="#summary"
+                onClick={(e) => handleNavClick(e, "summary")}
+                className={activeSection === "summary" ? "is-active" : ""}
+              >
+                Summary
+              </a>
+            </nav>
+          </aside>
+
+          {/* Main */}
+          <main className="kimchi-main">
+            {/* Header / Overview */}
+            <header className="kimchi-top" id="overview">
+              <p className="kimchi-kicker">KIMCHI STUDIOS | BRANDING</p>
+              <h1 className="kimchi-h1">Branding an artistic nail studio</h1>
+
+              {/* Hero blue card (same height behavior as Plotd) */}
+              <div className="kimchi-heroCard">
+                <div className="kimchi-heroMedia">
+                  <img src={heroImg} alt="Kimchi Studios preview" className="kimchi-heroImage" />
+                </div>
+              </div>
+
+              {/* Meta row (same 4-col structure as Plotd) */}
+              <div className="kimchi-meta">
+                <div className="kimchi-metaCol">
+                  <p className="kimchi-metaLabel">MY ROLE</p>
+                  <p className="kimchi-metaValue">Designer & Developer</p>
+                </div>
+
+                <div className="kimchi-metaCol">
+                  <p className="kimchi-metaLabel">TIMELINE</p>
+                  <p className="kimchi-metaValue">July-August 2025</p>
+                </div>
+
+                <div className="kimchi-metaCol">
+                  <p className="kimchi-metaLabel">TEAM</p>
+                  <p className="kimchi-metaValue">1 Founder</p>
+                  <p className="kimchi-metaValue">1 Designer</p>
+                </div>
+
+                <div className="kimchi-metaCol">
+                  <p className="kimchi-metaLabel">SKILLS</p>
+                  <p className="kimchi-metaValue">Brand Creation</p>
+                  <p className="kimchi-metaValue">Website Design</p>
+                  <p className="kimchi-metaValue">Website Development</p>
+                  <p className="kimchi-metaValue">Product Design</p>
+                </div>
+              </div>
+            </header>
+
+            {/* Summary */}
+            <section className="kimchi-section" id="summary">
+                <p className="kimchi-miniKicker">SUMMARY</p>
+                <h2 className="kimchi-h2">Designing a playful and scalable nail studio brand</h2>
+                <p className="kimchi-body">
+                    Kimchi Studios is a nail studio branding project focused on building a visual identity that feels playful, polished, and welcoming. I explored typography, colour, and logo applications to create a system that can scale across digital and physical touchpoints, while staying approachable and consistent.
+                </p>
+                <a
+                href="https://kimchistudios.ca/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+                >
+                    <button className="cta-button hero-cta">
+                        <span>View project</span>
+                        <img src={diagonalArrow} alt="" className="arrow" />
+                    </button>
+                </a>
+
+                <p className="kimchi-body" style ={{ marginTop: "40px"}}>
+                    Case study coming soon…
+                </p>
+            </section>
+          </main>
         </div>
-      </section>
-
-      {/* Overview + Impact */}
-      <section className="kimchi-overview">
-        <div className="kimchi-overview-left">
-          <h2 className="kimchi-section-title">Overview</h2>
-          <p className="kimchi-body">
-            Kimchi Studios is a nail studio branding project focused on creating
-            a visual identity that feels playful, polished, and welcoming.
-            The goal was to design a brand that could scale across digital and
-            physical touchpoints while staying approachable and expressive.
-            This project explored how color, typography, and tone can work
-            together to reflect a studio’s personality and values.
-          </p>
-        </div>
-
-        <aside className="kimchi-impact-card">
-          <h3 className="kimchi-impact-title">My impact</h3>
-          <ul className="kimchi-impact-list">
-            <li>Developed the brand’s visual direction and overall aesthetic</li>
-            <li>Explored typography, color palettes, and logo applications</li>
-            <li>Designed assets adaptable for social media and in-studio use</li>
-            <li>Balanced trend-driven visuals with long-term brand clarity</li>
-            <li>Iterated on concepts to ensure consistency across touchpoints</li>
-          </ul>
-        </aside>
-      </section>
-
-      <p className="kimchi-coming-soon">Case study coming soon…</p>
+      </div>
     </div>
   );
 }

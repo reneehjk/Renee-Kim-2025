@@ -1,61 +1,143 @@
 import heroImg from "../../assets/qux.png";
 import "./Qux.css";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import diagonalArrow from "../../assets/diagonal-arrow.svg";
 
 export default function Qux() {
-    return (
-        <div className="container qux-page">
-        {/* Hero */}
-        <section className="qux-hero">
-            <img
-            src={heroImg}
-            alt="Queen’s UX Club website preview"
-            className="qux-hero-image"
-            />
-        </section>
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("overview");
 
-        {/* Header */}
-        <section className="qux-header">
-            <h1 className="title">Queen’s UX Club (QUX)</h1>
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
 
-            <div className="qux-meta-row">
-                <p className="qux-subtitle">A case study on being a founder</p>
-                <span className="qux-year">2025</span>
-            </div>
-        </section>
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+    setActiveSection(id);
+  };
 
-        {/* Overview + Impact */}
-        <section className="qux-overview">
-            <div className="qux-overview-left">
-            <h2 className="qux-section-title">Overview</h2>
-            <p className="qux-body">
-                Co-founding a new university club meant building everything from
-                scratch, especially when it came to designing and running events
-                with no precedent. I planned and led UX workshops, socials, and
-                larger events by treating each as an experience-design problem:
-                iterating on structure, content, and facilitation to make UX
-                approachable for students encountering it for the first time.
-                Alongside event planning, I helped build the foundations that
-                enabled growth, including interviewing over 60 candidates to hire a
-                25-person executive team, co-creating a cohesive brand and website,
-                and growing our social presence to over 600 followers. These efforts
-                turned an initial idea into a sustainable, student-led UX community
-                at Queen’s University.
-            </p>
-            </div>
+  useEffect(() => {
+    const ids = ["overview", "summary"];
 
-            <aside className="qux-impact-card">
-            <h3 className="qux-impact-title">My impact</h3>
-            <ul className="qux-impact-list">
-                <li>Planned and led UX workshops, socials, and events from the ground up</li>
-                <li>Designed event experiences focused on accessibility, engagement, and psychological safety</li>
-                <li>Connected with mentors and speakers to support our annual designathon</li>
-                <li>Interviewed and hired the executive team, shaping the club’s long-term structure</li>
-                <li>Co-created a branding guide used across events, social media, and web</li>
-                <li>Contributed to a culture centered on curiosity, empathy, and experimentation</li>
-            </ul>
-            </aside>
-        </section>
-        <p className="qux-coming-soon">Case study coming soon…</p>
-        </div>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) setActiveSection(visible.target.id);
+      },
+      { threshold: [0.2, 0.35, 0.5, 0.65], rootMargin: "-35% 0px -55% 0px" }
     );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="container qux-page">
+      <div className="qux-max">
+        <div className="qux-shell">
+          {/* Left Sidebar */}
+          <aside className="qux-side">
+            <button className="qux-back" type="button" onClick={() => navigate("/projects")}>
+              ← BACK
+            </button>
+
+            <nav className="qux-side-nav" aria-label="Case study sections">
+              <a
+                href="#overview"
+                onClick={(e) => handleNavClick(e, "overview")}
+                className={activeSection === "overview" ? "is-active" : ""}
+              >
+                Overview
+              </a>
+
+              <a
+                href="#summary"
+                onClick={(e) => handleNavClick(e, "summary")}
+                className={activeSection === "summary" ? "is-active" : ""}
+              >
+                Summary
+              </a>
+            </nav>
+          </aside>
+
+          {/* Main */}
+          <main className="qux-main">
+            {/* Header / Overview */}
+            <header className="qux-top" id="overview">
+              <p className="qux-kicker">QUEEN’S UX CLUB | COMMUNITY BUILDING</p>
+              <h1 className="qux-h1">Creating a UI/UX community</h1>
+
+              {/* Hero blue card */}
+              <div className="qux-heroCard">
+                <div className="qux-heroMedia">
+                  <img src={heroImg} alt="QUX preview" className="qux-heroImage" />
+                </div>
+              </div>
+
+              {/* Meta row */}
+              <div className="qux-meta">
+                <div className="qux-metaCol">
+                  <p className="qux-metaLabel">MY ROLE</p>
+                  <p className="qux-metaValue">Co-Founder</p>
+                </div>
+
+                <div className="qux-metaCol">
+                  <p className="qux-metaLabel">TIMELINE</p>
+                  <p className="qux-metaValue">March 2025 - Present</p>
+                </div>
+
+                <div className="qux-metaCol">
+                  <p className="qux-metaLabel">TEAM</p>
+                  <p className="qux-metaValue">4 Co-Founders</p>
+                  <p className="qux-metaValue">24 Execs</p>
+                </div>
+
+                <div className="qux-metaCol">
+                  <p className="qux-metaLabel">SKILLS</p>
+                  <p className="qux-metaValue">Branding</p>
+                  <p className="qux-metaValue">Website Design</p>
+                  <p className="qux-metaValue">Marketing</p>
+                  <p className="qux-metaValue">Event Planning</p>
+                </div>
+              </div>
+            </header>
+
+            {/* Summary */}
+            <section className="qux-section" id="summary">
+                <p className="qux-miniKicker">SUMMARY</p>
+                <h2 className="qux-h2">Building a student-led UX community from the ground up</h2>
+                <p className="qux-body">
+                    Co-founding Queen’s UX Club meant designing a community from scratch. I planned and led workshops, socials, and larger events by iterating on structure and facilitation to make UX approachable for beginners. Alongside building programming and culture, I helped hire a 25-person executive team, grow our social presence, and support a sustainable student-led UX community.
+                </p>
+                <a
+                href="https://queensux.club/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+                >
+                <button className="cta-button hero-cta">
+                    <span>View project</span>
+                    <img src={diagonalArrow} alt="" className="arrow" />
+                </button>
+                </a>
+
+
+                <p className="qux-body" style ={{ marginTop: "40px"}}>
+                    Case study coming soon…
+                </p>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
 }

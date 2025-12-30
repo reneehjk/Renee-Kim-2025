@@ -43,7 +43,7 @@ export default function Contact() {
 
             <div className="contact-item">
               <p className="contact-label">Location</p>
-              <p className="contact-value">Vancouver BC | Kingston ON</p>
+              <p className="contact-link">Vancouver BC | Kingston ON</p>
             </div>
           </div>
         </div>

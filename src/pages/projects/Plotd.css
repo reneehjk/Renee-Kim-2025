@@ -192,6 +192,7 @@
   font-weight: 400;
   margin-bottom: 10px;
   opacity: 0.9;
+  color: #372A2A;
 }
 
 .plotd-body {
@@ -667,6 +668,7 @@
   .plotd-h3 {
     font-size: 18px;
     line-height: 1.25;
+      color: #372A2A;
   }
 
   /* Body text */

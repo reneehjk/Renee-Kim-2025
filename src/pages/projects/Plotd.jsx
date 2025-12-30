@@ -22,6 +22,7 @@ import retroImg from "../../assets/plotd/retro.png";
 import vibeImg from "../../assets/plotd/vibe.png";
 import logo from "../../assets/plotd/logo.png"
 import team from "../../assets/8.PNG";
+import design from "../../assets/plotd/design.png"
 
 import "./Plotd.css";
 import { useNavigate } from "react-router-dom";
@@ -300,6 +301,13 @@ export default function Plotd() {
                 alt="vibe"
                 className="plotd-insightsLogo"
               />
+              <div className="plotd-iterRow">
+                <img
+                src={design}
+                alt="vibe"
+                className="plotd-insightsLogo"
+              />
+              </div>
             </section>
 
             {/* Iterations */}
@@ -342,6 +350,8 @@ export default function Plotd() {
                 className="plotd-insightsLogo"
               />
               </div>
+
+              
 
               <p className="plotd-body">
                 The result balanced clarity with personality.

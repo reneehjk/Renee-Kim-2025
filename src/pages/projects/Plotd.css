@@ -1,243 +1,691 @@
-/* Plotd.css */
 /* =========================
-   Plotd Case Study Page
+   Plotd Case Study
+   Global Page Settings
 ========================= */
 
 .plotd-page {
-  padding-top: 10vh;
+  padding-top: 6vh;
   padding-bottom: 10vh;
 }
 
-/* =========================
-   Hero (two images)
-========================= */
-
-.plotd-hero {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 80px;
-}
-
-.plotd-hero-image {
-  width: min(200px, 100%);
-  height: auto;
-  display: block;
-  border-radius: 18px;
-  object-fit: cover;
+/* Smooth-scroll offset so sections don't tuck under sticky sidebar */
+.plotd-top,
+.plotd-section {
+  scroll-margin-top: 50px; /* tweak if needed */
 }
 
 /* =========================
-   Header
+   Layout Container
+   (Shared Width for Entire Case Study)
 ========================= */
 
-.plotd-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 60px;
-  padding-inline: 200px;
-}
-
-.plotd-title-group h1 {
-  margin: 0;
-}
-
-.plotd-subtitle {
-  margin-top: 14px;
-  font-size: 24px;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-.plotd-year {
-  font-size: 24px;
-  font-weight: 300;
-  color: #6D6565;
-  white-space: nowrap;
-}
-
-/* =========================
-   Header
-========================= */
-.title {
-  display: flex;
-  align-self: start;
-}
-
-.plotd-header {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* Subtitle + year row */
-.plotd-meta-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.plotd-max {
+  max-width: 1080px; 
   width: 100%;
 }
 
-.plotd-subtitle {
-  margin: 0;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-.plotd-year {
-  font-weight: 300;
-  color: #6D6565;
-  white-space: nowrap;
-}
-
-/* =========================
-   Coming Soon
-========================= */
-
-/* Matches your JSX pattern: <p className="plotd-coming-soon">... */
-.plotd-coming-soon {
-  margin-top: 50px;
-  margin-bottom: 0;
-  font-size: 20px;
-  font-weight: 300;
-  color: #6D6565;
-}
-
-/* =========================
-   Overview + Impact
-========================= */
-
-.plotd-overview {
+/* Sidebar + main content layout */
+.plotd-shell {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 160px 1fr;
+  gap: 72px;
   align-items: start;
-  margin-top: 34px;
+  width: 100%;
 }
 
-.plotd-section-title {
-  font-size: 24px;
+/* Ensure every major block fills the content column */
+.plotd-main,
+.plotd-top,
+.plotd-section,
+.plotd-heroCard,
+.plotd-meta,
+.plotd-stats,
+.plotd-twoCols,
+.plotd-moodboards,
+.plotd-iterRow,
+.plotd-finalList {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* =========================
+   Left Sidebar Navigation
+========================= */
+
+.plotd-side {
+  position: sticky;
+  top: 110px;
+  height: fit-content;
+  width: 160px;
+}
+
+/* Back button */
+.plotd-back {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+/* Section links */
+.plotd-side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.plotd-side-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+.plotd-side-nav a:hover {
+  opacity: 1;
+}
+
+/* Sidebar link default state */
+.plotd-side-nav a {
+  color: #6D6565;
   font-weight: 400;
-  margin: 0 0 18px 0;
+}
+
+/* Active section */
+.plotd-side-nav a.is-active {
   color: #372A2A;
+  font-weight: 600;
+}
+
+
+
+/* =========================
+   Overview Section
+   (Title, Hero, Meta Info)
+========================= */
+
+.plotd-top {
+  padding-top: 8px;
+}
+
+/* Small uppercase kicker */
+.plotd-kicker {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+/* Main case study title */
+.plotd-h1 {
+  font-size: 46px;
+  line-height: 1.12;
+  font-weight: 400;
+  margin-bottom: 26px;
+  max-width: 760px;
+}
+
+/* Hero card with app screens */
+.plotd-heroCard {
+  background: #cfe0fb;
+  border-radius: 18px;
+  padding: 34px 26px;
+  margin-bottom: 28px;
+}
+
+.plotd-heroPhones {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  align-items: flex-end;
+}
+
+.plotd-heroPhones img {
+  width: 210px;
+  height: auto;
+  display: block;
+}
+
+/* Meta information row (Role, Timeline, Team, Skills) */
+.plotd-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  margin-top: 18px;
+  margin-bottom: 40px;
+}
+
+.plotd-metaLabel {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.plotd-metaValue {
+  font-size: 18px;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+/* =========================
+   Shared Section Typography
+   (Discovery, Insights, Visual, etc.)
+========================= */
+
+.plotd-section {
+  margin-top: 70px;
+}
+
+.plotd-h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.plotd-h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  opacity: 0.9;
 }
 
 .plotd-body {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.85;
+  max-width: 760px;
+}
+
+.plotd-body-black {
+  font-size: 18px;
+  color: #372A2A;
+  line-height: 1.7;
+  opacity: 0.85;
+  max-width: 760px;
+}
+
+.plotd-miniKicker {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+
+
+
+
+/* 1) Default paragraph color across the case study */
+.plotd-main p {
   color: #6D6565;
-  max-width: 58ch;
 }
 
-/* Impact card */
-.plotd-impact-card {
-  background: #7fa0cf; /* adjust to match your exact blue */
-  border-radius: 28px;
-  padding: 34px 34px;
-  color: #ffffff;
-}
+/* Keep headings as-is (your headings already use the global text color) */
 
-.plotd-impact-title {
-  margin: 0 0 18px 0;
-  font-size: 24px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.plotd-impact-list {
-  margin: 0;
-  padding-left: 18px;
+/* 2) Stat cards = perfect squares */
+.plotd-statCard {
+  aspect-ratio: 1 / 1;
   display: grid;
-  gap: 10px;
+  width: 250px; 
+  place-items: center;
+  align-content: center;
+  gap: auto;
+  padding: 24px;
 }
 
-.plotd-impact-list li {
-  font-size: 16px;
-  font-weight: 300;
+/* Ensure text inside stat cards is the darker color */
+.plotd-statCard .plotd-statNum {
+  color: #372A2A;
 }
 
-/* Slightly softer bullets */
-.plotd-impact-list li::marker {
-  color: rgba(255, 255, 255, 0.75);
+/* Optional: keep the stat text nicely centered */
+.plotd-statCopy {
+  text-align: center;
+  max-width: 5ch;
+}
+
+/* 3) Insights header format (matches your screenshot) */
+
+
+/* Kicker styling closer to reference */
+.plotd-miniKicker {
+  color: #6D6565;
+  opacity: 0.65;
+  letter-spacing: 0.18em;
+}
+
+/* Insights header spacing */
+.plotd-insightsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* Full-width logo inside insights */
+.plotd-insightsLogo {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 32px 0;
+  border-radius: 10px;
+}
+
+
+/* =========================
+   Discovery Section
+   (Stats / Insights)
+========================= */
+
+.plotd-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.plotd-statCard {
+  background: radial-gradient(
+    circle at center,
+    #7AA0D1 0%,
+    #C6DCF9 70%
+  );
+
+
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: center;
+}
+
+.plotd-statNum {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.plotd-statText {
+  font-size: 12px;
+  line-height: 1.45;
+  opacity: 0.75;
+}
+
+/* =========================
+   Insights to Concept
+   (Blue Callout Block)
+========================= */
+
+.plotd-callout {
+  background: #cfe0fb;
+  border-radius: 18px;
+  padding: 42px 28px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.plotd-calloutTitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.plotd-calloutBody {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* =========================
+   Visual Design Section
+========================= */
+
+.plotd-twoCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 10px;
+}
+
+.plotd-colLabel {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   Iterations Section
+========================= */
+
+.plotd-iterRow {
+  margin-top: 18px;
+}
+
+/* =========================
+   Final Product Section
+========================= */
+
+.plotd-finalList {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.plotd-finalItem {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Blue background square */
+.plotd-phoneSquare {
+  width: 600px;
+  height: 600px;           /* fixed square */
+  background: radial-gradient(
+    circle at center,
+    #7AA0D1 0%,
+    #C6DCF9 70%
+  );
+  border-radius: 24px;
+  padding: 40px;           /* space around phone */
+  display: grid;
+  place-items: center;
+}
+
+/* Phone image */
+.plotd-phoneImg {
+  height: 400px;           /* fixed phone height */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Text block beside the square */
+.plotd-finalText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 /* =========================
    Responsive
+   Tablet: <= 1060px
+   Phone:  <= 640px
 ========================= */
 
-@media (max-width: 820px) {
-  .plotd-hero {
-    margin-bottom: 56px;
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 1060px) {
+  /* Layout: tighter sidebar + content */
+  .plotd-shell {
+    grid-template-columns: 140px 1fr;
+    gap: 44px;
+  }
+
+  .plotd-side {
+    width: 140px;
+    top: 96px;
+  }
+
+  /* Spacing */
+  .plotd-section {
+    margin-top: 56px;
+  }
+
+  /* Hero phones — stay horizontal */
+  .plotd-heroPhones {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 18px;
+  }
+
+  .plotd-heroPhones img {
+    width: 180px;
+  }
+
+  /* Meta — stays 4 across on tablet */
+  .plotd-meta {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* Discovery stats — ALWAYS 3 across */
+  .plotd-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .plotd-statCard {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .plotd-statNum {
+    font-size: 24px;
+  }
+
+  /* Visual sections — keep 2 columns */
+  .plotd-twoCols,
+  .plotd-twoCols-reflection {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  /* Final product — scale down from 600, still side-by-side */
+  .plotd-finalItem {
+    grid-template-columns: 520px 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .plotd-phoneSquare {
+    width: 520px;
+    height: 520px;
+    padding: 32px;
+  }
+
+  .plotd-phoneImg {
+    height: 360px;
+  }
+}
+
+/* =========================
+   Phone
+========================= */
+@media (max-width: 640px) {
+  /* Hard gutters (10px) without overflow hacks */
+  .plotd-page {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  /* Center wrapper and prevent any fixed-width behavior */
+  .plotd-max {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  /* Remove sidebar on mobile */
+  .plotd-side {
+    display: none;
+  }
+
+  /* Single column layout */
+  .plotd-shell {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    width: 100%;
+  }
+
+  /* CRITICAL: allow grid/flex children to actually shrink */
+  .plotd-main,
+  .plotd-top,
+  .plotd-section,
+  .plotd-heroCard,
+  .plotd-meta,
+  .plotd-stats,
+  .plotd-twoCols,
+  .plotd-moodboards,
+  .plotd-iterRow,
+  .plotd-finalList,
+  .plotd-finalItem,
+  .plotd-finalText {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;           /* ⬅️ prevents overflow in grids */
+    box-sizing: border-box; /* ⬅️ padding counts inside width */
+  }
+
+  /* Sections spacing */
+  .plotd-section {
+    margin-top: 42px;
+  }
+
+  /* Hero phones: horizontal but cannot overflow */
+  .plotd-heroPhones {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 phones */
+    gap: 12px;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .plotd-heroPhones img {
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    display: block;
+  }
+
+  /* Meta: 2x2 */
+  .plotd-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 
-  .plotd-hero-image {
-    width: min(200px, 100%);
-    height: auto;
-    display: block;
-    border-radius: 18px;
-    object-fit: cover;
-    }
-  .plotd-header {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-
-  .plotd-year {
-    margin-top: 8px;
-    font-size: 16px;
-  }
-
-  .plotd-subtitle {
-    font-size: 16px;
-  }
-
-  .plotd-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 60px;
-    padding-inline: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .plotd-hero {
-    margin-bottom: 44px;
-    gap: 12px;
-  }
-
-  .plotd-hero-image {
-    border-radius: 14px;
-  }
-
-  .plotd-subtitle {
-    margin-top: 10px;
-  }
-
-  .plotd-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 60px;
-    padding-inline: 0px;
-  }
-}
-
-@media (max-width: 900px) {
-  .plotd-overview {
+  /* Discovery: single column + centered cards */
+  .plotd-stats {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 14px;
+    justify-items: center;
   }
 
-  .plotd-body {
-    max-width: none;
+  .plotd-statCard {
+    width: 100%;
+    max-width: 320px;
+    padding: 25px;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .plotd-statNum {
+    font-size: 28px;
+  }
+
+  .plotd-statCopy {
+    max-width: 18ch; /* readable on mobile */
+  }
+  .plotd-metaValue {
+    font-size: 14px;
+    margin-bottom: 2px;
+    opacity: 0.9;
+    }
+
+  /* Visual sections: stack */
+  .plotd-twoCols,
+  .plotd-twoCols-reflection {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Final: stack + responsive square (no fixed px width) */
+  .plotd-finalItem {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .plotd-phoneSquare {
+  width: 100%;
+  height: 350px;          /* definite height */
+  padding: 24px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plotd-phoneImg {
+  height: 100%;           /* fills square inner height */
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+  /* Safety: images never exceed container */
+  .plotd-page img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Safety for all images EXCEPT the phone images */
+.plotd-page img:not(.plotd-phoneImg) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+}
+
+@media (max-width: 640px) {
+  /* Titles */
+  .plotd-h1 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  .plotd-h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+  /* Subtitles */
+  .plotd-h3 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  /* Body text */
+  .plotd-body,
+  .plotd-body-black {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Small text */
+  .plotd-kicker,
+  .plotd-miniKicker,
+  .plotd-metaLabel,
+  .plotd-smallNote,
+  .plotd-statText,
+  .plotd-calloutTitle,
+  .plotd-calloutBody {
+    font-size: 12px;
+    line-height: 1.45;
   }
 }
+

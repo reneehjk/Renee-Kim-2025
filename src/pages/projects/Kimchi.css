@@ -154,7 +154,7 @@
 }
 
 .kimchi-metaValue {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 4px;
   opacity: 0.9;
   color: #6D6565;
@@ -184,7 +184,7 @@
 }
 
 .kimchi-body {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   opacity: 0.85;
   max-width: 760px;
@@ -200,7 +200,7 @@
   background-color: #372A2A;
   color: #F2F0EF;
   font-family: "Urbanist", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
   border: none;
   cursor: pointer;

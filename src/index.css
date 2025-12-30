@@ -70,7 +70,7 @@ h3 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   font-weight: 300;
   color: #6D6565;
@@ -129,7 +129,7 @@ p strong {
   background-color: #372A2A;
   color: #F2F0EF;
   font-family: "Urbanist", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 200;
   border: none;
   cursor: pointer;
@@ -613,7 +613,7 @@ p strong {
 
 .project-tags {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.02em;
   font-weight: 400;
   color: #372A2A;
@@ -1023,7 +1023,7 @@ p strong {
 
 /* Left column */
 .about-story-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #372A2A;
 }
 
@@ -1115,7 +1115,7 @@ p strong {
   padding: 10px 12px;
   border-radius: 14px;
 
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.35;
 
   color: #372A2A;

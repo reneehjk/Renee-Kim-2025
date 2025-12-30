@@ -116,7 +116,7 @@ export default function Qux() {
                 <p className="qux-miniKicker">SUMMARY</p>
                 <h2 className="qux-h2">Building a student-led UX community from the ground up</h2>
                 <p className="qux-body">
-                    Co-founding Queen’s UX Club meant designing a community from scratch. I planned and led workshops, socials, and larger events by iterating on structure and facilitation to make UX approachable for beginners. Alongside building programming and culture, I helped hire a 25-person executive team, grow our social presence, and support a sustainable student-led UX community.
+                    Co-founding Queen’s UX Club meant designing a community from scratch. I planned and led workshops, socials, and larger events by iterating on structure and facilitation to make UX approachable for beginners. Alongside building programming and culture, I helped hire a 24-person executive team, grow our social presence, and support a sustainable student-led UX community.
                 </p>
                 <a
                 href="https://queensux.club/"

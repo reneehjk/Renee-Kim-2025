@@ -29,7 +29,7 @@ export default function Projects() {
                         <div className="project-meta">
                             <h2 className="project-title">QUX</h2>
                             <p className="project-subtitle">Queen's UX Club | 2025</p>
-                            <p className="project-tags">Co-Founder</p>
+                            <p className="project-tags">Branding | Website Design</p>
                     </div>
                     </article>
                     {/* Left (3 parts) — Plotd */}
@@ -37,7 +37,7 @@ export default function Projects() {
                         <div className="project-meta">
                             <h2 className="project-title">Plotd</h2>
                             <p className="project-subtitle">Gaming Platform App | 2026</p>
-                            <p className="project-tags">Product Design</p>
+                            <p className="project-tags">User Research | Product Design</p>
                         </div>
 
                         <div className="project-media">
@@ -54,7 +54,7 @@ export default function Projects() {
                             <h2 className="project-title">Kimchi Studios</h2>
                             <p className="project-subtitle">Nail Studio Branding | 2025</p>
                             <p className="project-tags">
-                                Project Management | Brand Creation | Web Development
+                                Brand Creation | Website Development 
                             </p>
                         </div>
                     </article>

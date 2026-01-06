@@ -926,7 +926,7 @@ p strong {
 
 
 .about-intro {
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 }
 
 .about-kicker {
@@ -1104,7 +1104,7 @@ p strong {
   padding: 10px 12px;
   border-radius: 14px;
 
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.35;
 
   color: #372A2A;
@@ -1210,7 +1210,7 @@ p strong {
   }
 
   .about-intro {
-    margin-bottom: 56px;
+    margin-bottom: 30px;
   }
 
   .about-kicker {
@@ -1233,6 +1233,7 @@ p strong {
   .about-story-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+    margin-bottom: 30px;
   }
 
   .about-story-label {

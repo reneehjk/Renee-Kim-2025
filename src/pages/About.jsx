@@ -143,10 +143,10 @@ export default function About() {
 
         <div className="about-inline-photos" aria-label="Photos in story">
           <PhotoCard src={fourth} alt="Pokémon" caption="Pokémon card show!!" />
-          <PhotoCard src={seven} alt="Dance" caption="CCDC dance team photoshoot" />
+          <PhotoCard src={seven} alt="Dance" caption="CCDC photoshoot" />
           <PhotoCard src={fifth} alt="Figure skating" caption="Figure skating = my reset" />
           <PhotoCard src={eight} alt="Plotd team" caption="The super cool Plotd team!!" />
-          <PhotoCard src={sixth} alt="Conference moment" caption="Conference + community moments" />
+          <PhotoCard src={sixth} alt="Conference moment" caption="Community moments" />
           <PhotoCard src={second} alt="Working session" caption="QWIC ♡ QUX" />
         </div>
       </section>

@@ -125,16 +125,17 @@ p strong {
   align-items: center;
   gap: 12px;
   padding: 10px 30px;
-  border-radius: 15px;
   background-color: #372A2A;
   color: #F2F0EF;
   font-family: "Urbanist", system-ui, sans-serif;
   font-size: 16px;
   font-weight: 200;
   border: none;
+  border-radius: 3px;   /* ⬅️ add this */
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
+
 
 .cta-button .arrow {
   width: 14px;
@@ -145,6 +146,7 @@ p strong {
 
 .cta-button:hover {
   background-color: #6D6565;
+    transform: translateY(-1px);
 }
 
 .cta-button:hover .arrow {
@@ -437,6 +439,7 @@ p strong {
 
 .hero-cta {
   margin-top: 90px;
+  border-radius: 3px;
 }
 
 
@@ -505,7 +508,7 @@ p strong {
   .cta-button {
     padding: 10px 22px;
     font-size: 16px;
-    border-radius: 14px;
+    border-radius: 2px;
   }
 
   .hero-cta {
@@ -555,25 +558,12 @@ p strong {
 .project-card {
   background: #F2F0EF;
   border: 1px solid #D0C7C2;
-  border-radius: 36px;
+  border-radius: 5px;
   padding: 38px;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 32px;
-  min-height: 360px;
   overflow: hidden;
-}
-
-.project-card--wide {
-  grid-column: 1 / -1;
-  padding: 76px; 
-}
-
-.project-card--wide .project-meta {
-  position: relative;
-  z-index: 2;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .project-media {
@@ -584,9 +574,9 @@ p strong {
 
 .project-media img {
   width: 100%;
-  max-width: 520px;
+  max-width: 420px;
   height: auto;
-  border-radius: 18px;
+  border-radius: 5px;
   display: block;
 }
 
@@ -632,7 +622,7 @@ p strong {
 .project-card--inner {
   background: #F2F0EF;
   border: 1px solid #D0C7C2;
-  border-radius: 36px;
+  border-radius: 5px;
   padding: 38px;
   min-height: 360px;
   overflow: hidden;
@@ -734,19 +724,6 @@ p strong {
   top: -70px;
 }
 
-.project-card--wide .project-flower {
-  width: 600px;
-  left: -100px;
-  top: 0px;
-}
-
-.project-card--wide .project-meta .project-title {
-  text-align: end;
-}
-
-.project-card--wide .project-meta .project-tags {
-  text-align: end;
-}
 
 @media (max-width: 1185px) {
   .project-card--plotd .project-media img {
@@ -785,23 +762,17 @@ p strong {
   /* make every card the same size */
   .project-card,
   .project-card--inner,
-  .project-card--plotd,
-  .project-card--wide {
+  .project-card--plotd {
     width: 100%;
     height: 470px;
     min-height: 0; /* override desktop min-heights */
     padding: 28px;
-    border-radius: 30px;
+    border-radius: 3px;
     overflow: hidden;
     background: #F2F0EF;
     border: 1px solid #D0C7C2;
   }
 
-  /* remove “wide” behavior on mobile */
-  .project-card--wide {
-    grid-column: auto;
-    justify-content: space-between;
-  }
 
   /* normalize Plotd card (no absolute media) */
   .project-card--plotd {
@@ -867,11 +838,6 @@ p strong {
     width: 200px;
   }
 
-  .project-card--wide .project-flower {
-    left: -80px;
-    top: -120px;
-    width: 320px;
-  }
 
   .project-card--plotd .project-flower {
     right: -20px;
@@ -975,7 +941,7 @@ p strong {
 }
 
 .about-image {
-  border-radius: 16px;
+  border-radius: 3px;
   width: 100%;
   object-fit: cover;
 }
@@ -995,7 +961,7 @@ p strong {
 
 .about-image-grid img {
   width: 160px;
-  border-radius: 16px;
+  border-radius: 3px;
 }
 
 
@@ -1042,7 +1008,7 @@ p strong {
 
 .about-photo-card {
   margin: 0;
-  border-radius: 10px;
+  border-radius: 3px;
   overflow: hidden;
   border: 1px solid #D0C7C2;
   background: #F2F0EF;
@@ -1102,7 +1068,7 @@ p strong {
   bottom: 12px;
 
   padding: 10px 12px;
-  border-radius: 14px;
+  border-radius: 3px;
 
   font-size: 12px;
   line-height: 1.35;

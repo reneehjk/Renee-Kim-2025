@@ -26,11 +26,44 @@ import design from "../../assets/plotd/design.png"
 
 import "./Plotd.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
 
 export default function Plotd() {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("overview");
+
+  const ids = useMemo(
+  () => ["overview", "discovery", "insights", "visual", "iterations", "final", "reflection"],
+  []
+);
+
+useEffect(() => {
+  const sections = ids
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort(
+          (a, b) =>
+            Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top)
+        )[0];
+
+      if (visible?.target?.id) setActiveSection(visible.target.id);
+    },
+    {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: [0.01, 0.1, 0.2],
+    }
+  );
+
+  sections.forEach((el) => observer.observe(el));
+  return () => observer.disconnect();
+}, [ids]);
 
   const handleNavClick = (e, id) => {
     e.preventDefault();
@@ -46,42 +79,6 @@ export default function Plotd() {
     window.history.replaceState(null, "", `#${id}`);
     setActiveSection(id);
   };
-
-  useEffect(() => {
-    const ids = [
-      "overview",
-      "discovery",
-      "insights",
-      "visual",
-      "iterations",
-      "final",
-      "reflection",
-    ];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // pick the visible section with the highest intersection ratio
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible?.target?.id) setActiveSection(visible.target.id);
-      },
-      {
-        // activates when section is around the middle of the viewport
-        root: null,
-        threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: "-35% 0px -55% 0px",
-      }
-    );
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <div className="container plotd-page">

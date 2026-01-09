@@ -45,19 +45,7 @@ export default function Projects() {
                             <img src={pt} alt="Plotd app mockup" />
                         </div>
                     </article>
-                    <article className="project-card project-card--wide" onClick={() => navigate("/projects/kimchi-studios")}>
-                        <div className="project-media">
-                            <img src={mf} alt="" className="project-flower" />
-                            <img src={ks} alt="" />
-                        </div>
-                        <div className="project-meta">
-                            <h2 className="project-title">Kimchi Studios</h2>
-                            <p className="project-subtitle">Nail Studio Branding | 2025</p>
-                            <p className="project-tags">
-                                Brand Creation | Website Development 
-                            </p>
-                        </div>
-                    </article>
+                    
                 </div>
             </section>
         </div>

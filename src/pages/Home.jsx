@@ -106,8 +106,8 @@ export default function Home() {
             Smooth developer handoff.
           </span>
         </h1>
-        <Link to="/projects" style={{ textDecoration: "none" }}>
-            <button className="cta-button hero-cta">
+        <Link to="/projects" >
+            <button className="cta-button hero-cta" >
                 <span>Projects</span>
                 <img src={diagonalArrow} alt="" className="arrow" />
             </button>

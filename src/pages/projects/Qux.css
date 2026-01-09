@@ -108,7 +108,7 @@
 /* Hero card like Plotd */
 .qux-heroCard {
   background: #cfe0fb;
-  border-radius: 18px;
+  border-radius: 5px;
   padding: 34px 26px;
   margin-bottom: 28px;
 }
@@ -125,7 +125,7 @@
   width: auto;
   max-width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 5px;
   object-fit: contain;
 }
 

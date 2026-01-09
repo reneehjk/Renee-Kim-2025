@@ -16,8 +16,8 @@ import ScrollToTop from "./components/ScrollToTop";
 
 
 import Plotd from "./pages/projects/Plotd.jsx";
-import Kimchi from "./pages/projects/Kimchi.jsx";
 import Qux from "./pages/projects/Qux.jsx";
+import Solus from "./pages/projects/Solus.jsx"
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -31,7 +31,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/plotd" element={<Plotd />} />
-          <Route path="/projects/kimchi-studios" element={<Kimchi />} />
+          <Route path="/projects/solus" element={<Solus />} />
           <Route path="/projects/qux" element={<Qux />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

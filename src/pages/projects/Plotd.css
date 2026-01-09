@@ -1,3 +1,5 @@
+
+
 /* =========================
    Plotd Case Study
    Global Page Settings
@@ -11,8 +13,9 @@
 /* Smooth-scroll offset so sections don't tuck under sticky sidebar */
 .plotd-top,
 .plotd-section {
-  scroll-margin-top: 50px; /* tweak if needed */
+  scroll-margin-top: 90px;
 }
+
 
 /* =========================
    Layout Container
@@ -79,27 +82,42 @@
 }
 
 .plotd-side-nav a {
+  position: relative;
+  padding-left: 14px;
   text-decoration: none;
-  color: inherit;
   font-size: 14px;
-  opacity: 0.65;
+  color: #6D6565;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
 }
 
 .plotd-side-nav a:hover {
   opacity: 1;
 }
 
-/* Sidebar link default state */
-.plotd-side-nav a {
-  color: #6D6565;
-  font-weight: 400;
+.plotd-side-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  border-radius: 999px;
+  background: transparent;
 }
 
-/* Active section */
 .plotd-side-nav a.is-active {
   color: #372A2A;
-  font-weight: 600;
+  font-weight: 700;
+  opacity: 1;
 }
+
+.plotd-side-nav a.is-active::before {
+  background: #372A2A;
+}
+
 
 
 
@@ -132,7 +150,7 @@
 /* Hero card with app screens */
 .plotd-heroCard {
   background: #cfe0fb;
-  border-radius: 18px;
+  border-radius: 5px;
   padding: 34px 26px;
   margin-bottom: 28px;
 }
@@ -274,7 +292,7 @@
   height: auto;
   display: block;
   margin: 32px 0;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 
@@ -298,7 +316,7 @@
   );
 
 
-  border-radius: 14px;
+  border-radius: 3px;
   padding: 22px 18px;
   text-align: center;
 }
@@ -322,7 +340,7 @@
 
 .plotd-callout {
   background: #cfe0fb;
-  border-radius: 18px;
+  border-radius: 5px;
   padding: 42px 28px;
   margin-top: 18px;
   text-align: center;
@@ -392,7 +410,7 @@
     #7AA0D1 0%,
     #C6DCF9 70%
   );
-  border-radius: 24px;
+  border-radius: 5px;
   padding: 40px;           /* space around phone */
   display: grid;
   place-items: center;
@@ -405,7 +423,7 @@
   max-width: 100%;
   object-fit: contain;
   display: block;
-  border-radius: 20px;
+  border-radius: 3px;
 }
 
 /* Text block beside the square */
@@ -584,7 +602,7 @@
     width: 100%;
     max-width: 320px;
     padding: 25px;
-    border-radius: 12px;
+    border-radius: 3px;
     box-sizing: border-box;
   }
 

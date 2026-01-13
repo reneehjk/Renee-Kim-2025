@@ -17,7 +17,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import Plotd from "./pages/projects/Plotd.jsx";
 import Qux from "./pages/projects/Qux.jsx";
-import Solus from "./pages/projects/Solus.jsx"
+import Solus from "./pages/projects/SolusTemp.jsx"
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

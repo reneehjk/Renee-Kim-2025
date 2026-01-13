@@ -4,6 +4,7 @@ import qu from "../assets/qux.png"
 import sf from "../assets/smallFlower.svg";
 import mf from "../assets/medFlower.svg";
 import lf from "../assets/largeFlower.svg";
+import so from "../assets/solus/heroSec.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -20,16 +21,16 @@ export default function Projects() {
                 {/* wrapper: 3:2 layout INSIDE */}
                 <div className="project-card--row">
                     {/* Right (2 parts) — QUX (different layout) */}
-                    <article className="project-card--inner project-card--qux" onClick={() => navigate("/projects/qux")}>
+                    <article className="project-card--inner project-card--solus" onClick={() => navigate("/projects/solus")}>
                         <div className="project-media">
                             <img src={sf} alt="" className="project-flower" />
-                            <img src={qu} alt="" />
+                            <img src={so} alt="" />
                         </div>
 
                         <div className="project-meta">
-                            <h2 className="project-title">QUX</h2>
-                            <p className="project-subtitle">Queen's UX Club | 2025</p>
-                            <p className="project-tags">Branding | Website Design</p>
+                            <h2 className="project-title">Solus</h2>
+                            <p className="project-subtitle">Queen's Student Hub | 2025</p>
+                            <p className="project-tags">User Research | Product Design</p>
                     </div>
                     </article>
                     {/* Left (3 parts) — Plotd */}

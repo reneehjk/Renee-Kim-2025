@@ -182,6 +182,8 @@
   letter-spacing: 0.12em;
   opacity: 0.6;
   margin-bottom: 6px;
+  font-weight: 500;
+  color: #373737;
 }
 
 .plotd-metaValue {

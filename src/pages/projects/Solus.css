@@ -186,14 +186,15 @@
   letter-spacing: 0.12em;
   opacity: 0.6;
   margin-bottom: 6px;
-  color: #6D6565;
+  font-weight: 500;
+  color: #373737;
 }
 
 .solus-metaValue {
   font-size: 16px;
   margin-bottom: 4px;
   opacity: 0.95;
-  color: #372A2A;
+  color: #6D6565;
 }
 
 /* =========================

@@ -94,7 +94,7 @@ export default function NavBar() {
 
           <a
             className="nav-link"
-            href="https://drive.google.com/file/d/1m5MQgJxuc2IDgVNZwC_ZXB8EyuZV6abL/view?usp=sharing"
+            href="https://drive.google.com/file/d/19pZnsIiprbnJNdbMf_pQWeVI-URKVHDY/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             onClick={handleLinkClick}

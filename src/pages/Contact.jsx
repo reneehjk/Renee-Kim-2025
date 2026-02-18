@@ -33,13 +33,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="contact-item">
-              <p className="contact-label">Phone Number</p>
-              <a className="contact-link" href="tel:+16043494822">
-                <span>+1 604 349-4822</span>
-                <img src={diagonalArrow} alt="" className="contact-arrow" />
-              </a>
-            </div>
+            
 
             <div className="contact-item">
               <p className="contact-label">Location</p>

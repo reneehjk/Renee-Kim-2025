@@ -93,9 +93,9 @@ export default function Home() {
 
       {/* Your existing content */}
       <div className="container hero-content">
-        <p className="hero-kicker">Renee Kim · Canada</p>
+        <h1 className="hero-kicker" style={{ fontSize: "16px", lineHeight: "1.6", fontWeight: "300", color: "#6D6565" }}>Renee Kim · Canada</h1>
 
-        <h1>
+        <h2 style={{ fontSize: "52px", lineHeight: "1.15", fontWeight: "400" }}>
           <span style={{ display: "block", color: "#372A2A" }}>
             Product Designer
           </span>
@@ -105,7 +105,7 @@ export default function Home() {
           <span style={{ display: "block", color: "#6D6565" }}>
             Smooth developer handoff.
           </span>
-        </h1>
+        </h2>
         <Link to="/projects" >
             <button className="cta-button hero-cta" >
                 <span>Projects</span>
